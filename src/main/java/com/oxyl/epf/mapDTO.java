@@ -1,9 +1,12 @@
 package com.oxyl.epf;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class mapDTO {
     private int id_map;
     private int ligne;
     private int colonne;
+    @JsonProperty("chemin_image")
     private String chemin_image;
 
     public mapDTO() {}

@@ -1,5 +1,7 @@
 package com.oxyl.epf;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class planteDTO {
     private int id_plante;
     private String nom;
@@ -9,6 +11,7 @@ public class planteDTO {
     private int cout;
     private double soleil_par_seconde;
     private String effet;
+    @JsonProperty("chemin_image")
     private String chemin_image;
 
     public planteDTO() {}

@@ -1,5 +1,7 @@
 package com.oxyl.epf;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class zombieDTO {
     private int id_zombie;
     private String nom;
@@ -7,6 +9,7 @@ public class zombieDTO {
     private double attaque_par_seconde;
     private int degat_attaque;
     private double vitesse_de_deplacement;
+    @JsonProperty("chemin_image")
     private String chemin_image;
     private int id_map;
 
