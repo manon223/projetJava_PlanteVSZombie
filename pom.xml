@@ -36,11 +36,6 @@
             <version>6.2.2</version>
         </dependency>
 
-
-
-
-
-
         <!-- Spring JDBC Template -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -48,7 +43,6 @@
             <version>6.1.13</version>
         </dependency>
 
-        <!-- Spring Test (remplace spring-boot-starter-test) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -98,8 +92,6 @@
             <version>6.1.0</version>
             <scope>provided</scope>
         </dependency>
-
-
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

@@ -57,7 +57,7 @@ public class zombieDAOImpl implements zombieDAO {
     }
 
     private RowMapper<zombie> zombieRowMapper() {
-        //recuperer les infos de la bdd
+        //récupérer infos de la bdd
         return (rs, rowNum) -> new zombie(
                 rs.getInt("id_zombie"),
                 rs.getString("nom"),
@@ -70,30 +70,29 @@ public class zombieDAOImpl implements zombieDAO {
         );
 
     }
-    //recuperer tous les zombies
+    //récupérer tous les zombies
     @Override
     public List<zombie> readAll_zombies() {
         String sql="SELECT * FROM zombie";
         return jdbcTemplate.query(sql, zombieRowMapper());
     }
-    //récupérer les zombies d'une certaine map
+    //récupérer les zombies en fonction de sa map associé
     @Override
     public List<zombie> findByID_map(int id_map) {
         String sql = "SELECT * FROM zombie WHERE id_map = ?";
         return jdbcTemplate.query(sql,new Object[]{id_map},zombieRowMapper());
     }
 
-    //mettre à jour un zombie
+    //mettre à jour
     @Override
     public zombie update_zombie(zombie zombie) {
         String sql = "UPDATE zombie SET nom=?, point_de_vie=?, attaque_par_seconde=?, degat_attaque=?, vitesse_de_deplacement=?, chemin_image=?, id_map=? WHERE id_zombie=?;";
-        //System.out.println(zombie.getId_zombie());
         jdbcTemplate.update(sql,zombie.getNom(),zombie.getPoint_de_vie(),zombie.getAttaque_par_seconde(),zombie.getDegat_attaque(),zombie.getVitesse_de_deplacement(),zombie.getChemin_image(),zombie.getId_map(),zombie.getId_zombie() );
         return zombie;
     }
 
 
-    //supprimer un zombie
+    //supprimer
     @Override
     public boolean delete_zombie(int id_zombie) {
         String sql="DELETE FROM zombie WHERE id_zombie=?";

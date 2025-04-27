@@ -14,7 +14,6 @@ import java.util.List;
 public class mapController {
     @Autowired
     private com.oxyl.epf.service.mapService mapService;
-
     public mapController(mapService mapService) {
         this.mapService = mapService;
     }

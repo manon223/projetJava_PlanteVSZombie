@@ -14,15 +14,13 @@ public class DatabaseConfig {
     @Bean
     public DataSource dataSource() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        //dataSource.setUrl("jdbc:mysql://localhost:3306/pvz");
-        // Configuration du DataSource avec les informations de connexion à MySQL
         dataSource.setUser("epf");
         dataSource.setPassword("mot_de_passe");
         dataSource.setServerName("localhost");
         dataSource.setPort(3306);
         dataSource.setDatabaseName("pvz");
 
-        return dataSource; // Retourne l'objet DataSource configuré
+        return dataSource; // Retourne DataSource configuré
     }
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
